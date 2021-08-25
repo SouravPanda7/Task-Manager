@@ -1,0 +1,16 @@
+<div class="row justify-content-center">
+    <div class="header1_div">
+        <h1>TASK-MANAGER</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="task_input">
+        <app-taskform></app-taskform>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="display_region">
+        <h2>TASKS</h2>
+        <app-task (deleteTask)="onDelete($event)" [tdata]="task" [id]="idx" *ngFor="let task of tasks; let idx = index"></app-task>
+    </div>
+</div>

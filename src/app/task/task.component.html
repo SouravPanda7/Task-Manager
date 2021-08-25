@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="tasks">
+        <div class="card mt-5" [class]="taskdata.checked==true?'bg-success':'bg-danger'">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <strong>TASK DESCRIPTION : </strong>{{taskdata.tname}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <strong>DATE : </strong>{{taskdata.date}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <strong>TIME : </strong>{{taskdata.time}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" (click)="onCheck($event)"><strong> TASK COMPLETED</strong>
+                    </div>
+                    <div class="col text-end">
+                        <button class="btn btn-primary" (click)="deletetask()">DELETE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

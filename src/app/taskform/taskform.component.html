@@ -1,0 +1,39 @@
+<div class="container pt-5 ">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-7 col-xl-9 col-xxl-7">
+                <div class="card bg-warning" >
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1>ENTER TASK</h1>
+                    </div>
+                    <div class="card-body">
+                        <div  [hidden]="isHidden" class="alert alert-success"><h2 style="text-align:center; font-size:15px">TASK CREATED SUCCESSFULLY!!</h2></div>
+                        <div  [hidden]="isShown" class="alert alert-danger"><h2 style="text-align:center; font-size:15px">Invalid task description</h2></div>
+                        <div  [hidden]="isShown1" class="alert alert-danger"><h2 style="text-align:center; font-size:15px">Invalid date</h2></div>
+                        <div  [hidden]="isShown2" class="alert alert-danger"><h2 style="text-align:center; font-size:15px">Invalid time</h2></div>
+                        <form #taskForm="ngForm">
+
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control" [class.is-invalid]="tname.invalid && tname.touched" [class.is-valid]="tname.valid && tname.touched" required #tname="ngModel" type="text" name="tname" placeholder="Enter name of the task" ngModel>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col">
+                                    <input class="form-control" type="date" required #date placeholder="Enter date">
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col">
+                                    <input class="form-control" type="time" required #time placeholder="Enter date">
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col text-center">
+                                    <button class="btn btn-primary" (click)="onSubmit(tname.value,date.value,time.value,false)">SUBMIT</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
